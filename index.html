@@ -75,5 +75,45 @@
         <img class= "carousel__img" src="./img/reloj.jpg" alt="Clock">
         <img class= "carousel__img" src="./img/mueble.jpg" alt="Sofa">
     </section>
+
+    <section class="contact">
+        <img src="./img/img3.jpg" alt="Contact">
+        <div>
+            <button>Google Maps ></button>
+            <p>Ut enim ad minim veniam, quis nostrud ejercicio ullamco ommodo consequat. Duis aute irure dolor in reprehenderit.</p>
+            <h2>Contact us</h2>
+        </div>
+
+        <form id="form">
+            <div class="form__name">
+                <label class="form__label" for="name"></label>
+                <input class="form__input" type="text" placeholder="Name and surname *" id="name">
+            </div>
+            <div class="form__telephone">
+                <label class="form__label" for="telephone"></label>
+                <input class="form__input" type="number" placeholder="Telephone *" id="telephone">
+            </div>
+            <div class="form__email">
+                <label class="form__label" for="email"></label>
+                <input class="form__input" type="email" placeholder="Email *" id="email">
+            </div>
+            <div class="form__town">
+                <label class="form__label" for="town"></label>
+                <input class="form__input" type="text" placeholder="Town *" id="town">
+            </div>
+            <div class="form__message">
+                <label class="form__label" for="message"></label>
+                <input class="form__input" type="textarea" placeholder="Message *" id="message">
+            </div>
+            <input type="submit" value="Send">
+        </form>
+    </section>
+
+    <script>
+        const form = document.getElementById("form");
+        form.addEventListener("submit", e =>{
+            e.preventDefault();
+        })
+    </script>
 </body>
 </html>
