@@ -5,48 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Decorative</title>
-    <link rel="stylesheet" href="<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
     <header>
-        <div class="header">
-            <img class="header__logo" src="./img/logo.png" alt="Logo Decorative">
-        </div>
-
-        <div class="navigation">
-            <nav class="navigation__list">
-                <ul class="menu">
-                    <li class="menu__list">
-                        <a href="./index.html">Home</a>
-                    </li>
-                    <li class="menu__list">
-                        <a href="#" target="About us">About us</a>
-                    </li>
-                    <li class="menu__list">
-                        <a href="#" target="Products">Products</a>
-                    </li>
-                    <li class="menu__list">
-                        <a href="#" target="Contact">Contact</a>
-                    </li>
-                </ul>
-                <img class="search__icon" src="./img/icono-lupa.png" alt="Search">
+            <nav class="nav flex">
+                <div class="flex align-items-center">
+                    <img class="banner__image" src="./img/img1.jpg" alt="Decorative banner">
+                    <img class="logo" src="./img/logo.png" alt="Logo Decorative">
+                </div>
+                <div>
+                    <ul class="menu flex align-items-center">
+                         <li class="menu__item">
+                             <a href="./index.html">Home</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" target="About us">About us</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" target="Products">Products</a>
+                        </li>
+                       <li class="menu__item">
+                            <a href="#" target="Contact">Contact</a>
+                       </li>
+                       <img class="search__icon" src="./img/icono-lupa.png" alt="Search">
+                    </ul>
+                </div>
             </nav>
-        </div>
-
-    </header>
-
-    <section class="banner">
-        <img class="banner__image" src="./img/img1.jpg" alt="Decorative banner">
+    
+    <section class="banner flex">
         <div class="wrapper">
-            <h1>Furniture that everyone loves</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <button>See more ></button>
+            <h1 class="wrapper__title">Furniture that <br> everyone loves</h1>
+            <p class="wrapper__p">Lorem ipsum dolor sit amet, consectetur adipisicing eiusmod <br> tempor incididunt ut labore et dolore magna aliqua</p>
+            <button class="wrapper__button">See more ></button>
         </div>
     </section>
+</header>
 
     <section class="favorites">
         <h2>The favorites</h2>
