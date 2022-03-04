@@ -114,8 +114,31 @@ header{
 
 .favorites {
     padding: 90px;
+    color: #282828;
 }
 
 .favorites__description {
     margin: 20px;
+    color: #939393;
+}
+
+.footer {
+    background-color: black;
+}
+
+.footer__logo {
+    width: 146px;
+    height: 36;
+}
+
+.footer__column {
+    padding: 50px;
+    margin: 40px;
+    list-style: none;
+    color: #fff;
+}
+
+.social__media {
+    width: 35px;
+    height: 35px;
 }
