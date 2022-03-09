@@ -1,10 +1,40 @@
 @media (max-width: 768px) {
    .menu__item {
        margin: 20px;
-       font-size: 12px;
+       font-size: 15px;
     }
 
     .logo {
         width: 100px;
+    }
+
+    .contact{
+        justify-content: center;
+        width: 100%;
+    }
+
+    .footer__title {
+        font-size: 15px;
+    }
+
+    .footer__column {
+        margin: 25px;
+    }
+
+    .footer__column p {
+        font-size: 12px;
+    }
+
+    .footer__column li {
+        font-size: 10px;
+    }
+
+    .social__media{
+        padding-bottom: 30px;
+    }
+
+    .social__media img {
+        width: 20px;
+        height: 20px;
     }
 }
