@@ -168,9 +168,8 @@ header{
 .carousel {
    height: 100%;
    position: relative;
+   padding-bottom: 60px;
 }
-
-
 
 .carousel__card {
     height: 100%;
@@ -214,6 +213,50 @@ header{
     width: 100%;
     height: 435px;
     z-index: -1;
+}
+
+.contact {
+    position: absolute;
+    padding-top: 30px;
+}
+
+.contact__text {
+    padding-left: 60px;
+    margin-right: 190px;
+}
+
+.contact__p {
+    color: #fff;
+    padding-top: 170px;
+}
+
+.contact__title {
+    color: #fff;
+    padding-top: 30px;
+}
+
+#form {
+    background-color: #fff;
+    padding: 60px;
+}
+
+.form__item {
+    margin-bottom: 10px;
+}
+
+.form__b {
+    background-color: #fff;
+    border-color: #4b4b4b;
+    border: solid;
+    border-width: thin;
+    color: #787878;
+    padding: 10px 30px;
+    margin-top: 20px;
+}
+
+.form__p {
+    color: #C5C5C5;
+    font-size: 10px;
 }
 
 .footer {
