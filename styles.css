@@ -11,7 +11,6 @@ body{
 
 .flex {
     display: flex;
-    
 }
 
 .align-items-center {
@@ -40,6 +39,7 @@ header{
     width: 160px;
     height: 40px;
     object-fit: contain;
+    margin-left: 40px;
 }
 
 .search__icon {
@@ -160,8 +160,40 @@ header{
 }
 
 .footer__column {
-    padding: 50px;
+    padding: 10px;
     margin: 40px;
     list-style: none;
     color: #fff;
+}
+
+.footer__column li {
+    margin-bottom: 10px;
+}
+
+.footer__title {
+    margin-bottom: 15px;
+}
+
+.footer__info {
+    justify-content: center;
+    width: 100%;
+}
+
+.social__media {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.social__media div{
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+.social__media img {
+    width: 35px;
+    height: 35px;
+    margin-left: 20px;
 }
