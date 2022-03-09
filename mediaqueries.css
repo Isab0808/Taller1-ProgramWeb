@@ -44,12 +44,16 @@
 
 @media (max-width: 400px) {
     .logo {
-        width: 90px;
+       width: 90px;
+    }
+
+    .nav{
+        flex-direction: column;
     }
 
     .menu__item {
-        margin: 5px;
-        font-size: 10px;
+        margin: 6px;
+        font-size: 15px;
     }
 
     .wrapper__title {
@@ -89,7 +93,7 @@
     }
 
     #items__carousel {
-        width: 380px;
+        width: 400px;
     }
 
     .carousel__title {
@@ -97,16 +101,33 @@
     }
 
     .contact {
-        
+        flex-direction: column;
     }
 
     .contact__text {
-        text-align: center;
-       
+        margin-right: 60px;
     }
+
+    .contact__title {
+        padding-left: 30px;
+        margin-bottom: 15px;
+    }
+
+    .contact__p {
+        padding-left: 30px;
+    }
+    
 
     #form {
         width: 100%;
+    }
+
+    .form__item {
+        margin-bottom: 20px;
+    }
+
+    .footer{
+        margin-top: 400px;
     }
 
     .footer__info{
