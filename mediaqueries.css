@@ -1,4 +1,8 @@
 @media (max-width: 768px) {
+    .menu {
+        padding-right: 20px;
+    }
+
    .menu__item {
        margin: 20px;
        font-size: 15px;
@@ -8,9 +12,8 @@
         width: 100px;
     }
 
-    .contact{
-        justify-content: center;
-        width: 100%;
+    .contact__text {
+        margin-right: 60px;
     }
 
     .footer__title {
@@ -37,4 +40,103 @@
         width: 20px;
         height: 20px;
     }
+}
+
+@media (max-width: 400px) {
+    .logo {
+        width: 90px;
+    }
+
+    .menu__item {
+        margin: 5px;
+        font-size: 10px;
+    }
+
+    .wrapper__title {
+        font-size: 30px;
+    }
+
+    .wrapper__p {
+        font-size: 14px;
+    }
+
+    .banner__image {
+        height: 500px;
+    }
+
+    .favorites__container {
+        flex-wrap: wrap;
+    }
+
+    .favorites__title {
+        font-size: 20px;
+    }
+
+    .favorites__p {
+        font-size: 13px;
+    }
+
+    .favorites__column {
+        width: 100%;
+    }
+
+    .collection__title {
+        font-size: 20px;
+    }
+
+    .collection__p {
+        font-size: 13px;
+    }
+
+    #items__carousel {
+        width: 380px;
+    }
+
+    .carousel__title {
+        font-size: 20px;
+    }
+
+    .contact {
+        
+    }
+
+    .contact__text {
+        text-align: center;
+       
+    }
+
+    #form {
+        width: 100%;
+    }
+
+    .footer__info{
+        flex-wrap: wrap;
+    }
+
+    .footer__title {
+        font-size: 15px;
+    }
+
+    .footer__column {
+        margin: 14px;
+        width: 100%;
+    }
+
+    .footer__column p {
+        font-size: 12px;
+    }
+
+    .footer__column li {
+        font-size: 10px;
+    }
+
+    .social__media{
+        padding-bottom: 30px;
+    }
+
+    .social__media img {
+        width: 20px;
+        height: 20px;
+    }
+
 }
