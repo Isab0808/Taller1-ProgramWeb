@@ -150,6 +150,11 @@ header{
     z-index: -1;
 }
 
+.carousel__title {
+    padding-top: 80px;
+    padding-bottom: 20px;
+}
+
 #items__carousel{
     height: 500px;
     overflow: hidden;
