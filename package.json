@@ -1,0 +1,30 @@
+{
+  "name": "taller1-programweb-master",
+  "version": "1.0.0",
+  "description": "Web Project for course Web Programmation at Universidad Icesi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel ./index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Isab0808/Taller1-ProgramWeb.git"
+  },
+  "keywords": [
+    "Web"
+  ],
+  "author": "Isabella Molina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Isab0808/Taller1-ProgramWeb/issues"
+  },
+  "homepage": "https://github.com/Isab0808/Taller1-ProgramWeb#readme",
+  "dependencies": {
+    "firebase": "^9.8.0",
+    "parcel": "^2.5.0"
+  },
+  "devDependencies": {
+    "process": "^0.11.10"
+  }
+}
