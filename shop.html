@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="./styles/_color.css">
     <link rel="stylesheet" href="./mediaqueries.css">
 </head>
+
 <body>
     <header>
         <nav class="nav flex ">
@@ -20,8 +22,8 @@
             </div>
             <div>
                 <ul class="menu flex align-items-center">
-                     <li class="menu__item ">
-                         <a class="black" href="./index.html">Home</a>
+                    <li class="menu__item ">
+                        <a class="black" href="./index.html">Home</a>
                     </li>
                     <li class="menu__item ">
                         <a class="black" href="#" target="About us">About us</a>
@@ -29,23 +31,61 @@
                     <li class="menu__item ">
                         <a class="black" href="./shop.html" target="Products">Products</a>
                     </li>
-                   <li class="menu__item ">
+                    <li class="menu__item ">
                         <a class="black" href="#" target="Contact">Contact</a>
-                   </li>
-                   <img class="search__icon" src="./img/icono-lupa.png" alt="Search">
+                    </li>
+                    <img class="search__icon" src="./img/icono-lupa.png" alt="Search">
                 </ul>
             </div>
         </nav>
 
-<section class="banner flex">
-    <div class="wrapper black">
-        <h1 class="wrapper__title black">Designer <br> Lamp</h1>
-        <button class="wrapper__b button black">See more ></button>
-    </div>
-</section>
+        <section class="banner flex">
+            <div class="wrapper black">
+                <h1 class="wrapper__title black">Designer <br> Lamp</h1>
+                <button class="wrapper__b button black">See more ></button>
+            </div>
+        </section>
 
-<img class="banner__image" src="./img/bannerShopPage.jpg" alt="Decorative banner">
-</header>
+        <img class="banner__image" src="./img/bannerShopPage.jpg" alt="Decorative banner">
+    </header>
+
+    <section id="categories">
+        <label for="category">Filter by category</label>
+        <select name="category" id="category">
+            <option value="">All</option>
+            <option value="decoration">Decoration</option>
+            <option value="ceiling">Ceiling</option>
+            <option value="led">LED</option>
+        </select>
+    
+        <label for="order">Order by price</label>
+        <select name="order" id="order">
+            <option value="">Select an option</option>
+            <option value="asc">From lower price to higher price</option>
+            <option value="desc">From higher price to lower price</option>
+        </select>
+
+        <label for="order">Order by popularity</label>
+        <select name="order" id="order">
+            <option value="">Select an option</option>
+            <option value="mp">The most popular</option>
+            <option value="lp">The least popular</option>
+        </select>
+    </section>
+
+    <section class="products" id="products">
+        <!-- <a class="product" href="#">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_757658-MLA49753184518_042022-O.webp" alt="" class="product__image">
+            <div class="product__info">
+                <h2 class="product__name">Nombre</h2>
+                <h3 class="product__price">$50000</h3>
+                <button class="product__cart">Añadir al carrito</button>
+            </div>
+        </a> -->
+
+        <div class="loader"></div>
+
+    </section>
     <form id="createUserForm">
         <input type="text" placeholder="Nombre completo" name="name">
         <input type="text" placeholder="Correo electrónico" name="email">
@@ -60,7 +100,52 @@
 
     </form>
 
+    <footer class="footer">
+        <div class="footer__info flex">
+            <div class="footer__column">
+                <img class="footer__logo" src="./img/logo.png" alt="Logo Decorative">
+                <p>All rights reserved 2022</p>
+            </div>
+            <div class="footer__column">
+                <h3 class="footer__title">My account</h3>
+                <div class="footer__item">
+                    <li>My orders</li>
+                    <li>Account settings</li>
+                    <li>Email preferences</li>
+                </div>
+            </div>
+            <div class="footer__column">
+                <h3 class="footer__title">About us</h3>
+                <div class="footer__item">
+                    <li>Our story</li>
+                    <li>Store finder</li>
+                    <li>Careers</li>
+                </div>
+            </div>
+            <div class="footer__column">
+                <h3 class="footer__title">Customer service</h3>
+                <div class="footer__item">
+                    <li>Help centre</li>
+                    <li>Delivery</li>
+                    <li>Returns & Refunds</li>
+                    <li>Contact us</li>
+                </div>
+            </div>
+        </div>
+        <div class="social__media flex">
+            <div>
+                <img src="./img/icono-facebook.png" alt="Facebook Decorative">
+                <img src="./img/icono-twitter.png" alt="Twitter Decorative">
+                <img src="./img/icono-instagram.png" alt="Instagram Decorative">
+                <img src="./img/icono-youtube.png" alt="Youtube Decorative">
+                <img src="./img/icono-email.png" alt="Email Decorative">
+            </div>
+        </div>
+    </footer>
+
     <script src="./scripts/app.js" type="module"></script>
     <script src="./scripts/login.js" type="module"></script>
+    <script src="./scripts/shop.js" type="module"></script>
 </body>
+
 </html>
