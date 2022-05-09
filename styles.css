@@ -94,6 +94,16 @@ header{
     margin-top: 20px;
 }
 
+.button--1{
+    color: #939393;
+    border-color: #939393;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-bottom-style: solid;
+    border-left-style: hidden;
+    background-color:transparent;
+}
+
 .favorites__container {
     justify-content: space-between;
 }
