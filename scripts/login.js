@@ -6,6 +6,13 @@ import { doc, setDoc } from "firebase/firestore";
 const createUserForm = document.getElementById("createUserForm");
 const loginForm = document.getElementById("loginForm");
 
+const changeLogin = document.getElementById("changeLogin");
+const changeSignin = document.getElementById("changeSignin");
+
+const siginArticle = document.getElementById("login__form--create");
+const loginArticle = document.getElementById("login__form--login");
+
+
 createUserForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -35,6 +42,18 @@ loginForm.addEventListener("submit", e => {
 
     login(auth, email, password);
 });
+
+changeLogin.addEventListener("click", () => {
+    console.log("click changeLogin");
+    loginArticle.classList.add("hidden");
+    siginArticle.classList.remove("hidden");
+})
+
+changeSignin.addEventListener("click", () => {
+    console.log("click signIn")
+    loginArticle.classList.remove("hidden");
+    siginArticle.classList.add("hidden");
+})
 
 
 
