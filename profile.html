@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create a new product</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles/profile.scss">
     <link rel="stylesheet" href="./mediaqueries.css">
+    <title>Document</title>
 </head>
-
 <body>
-    
     <nav class="nav flex">
         <div class="flex align-items-center">
-            <img class="logo" src="./img/logo.png" alt="Logo Decorative">
+            <img class="logo" src="./img/logo_2.png" alt="Logo Decorative">
         </div>
         <div>
             <ul class="menu flex align-items-center">
@@ -48,21 +46,14 @@
         </div>
     </nav>
 
-    
+    <article id="profileInfo">
+        
+    </article>
+    <article id="profileOrders">
 
-    <form id="createProductForm">
-        <input type="text" name="name" placeholder="Nombre del producto">
-        <textarea name="description"></textarea>
-        <input type="number" name="price">
-        <select name="category">
-            <option value="decoration">Decoration</option>
-            <option value="ceiling">Ceiling</option>
-            <option value="led">LED</option>
-        </select>
-        <input type="file" name="images" multiple>
-        <input type="submit" value="Crear producto">
-    </form>
-    <script src="./scripts/createProduct.js" type="module"></script>
+    </article>
+
+    <script src="./scripts/app.js" type="module"></script>
+    <script src="./scripts/profile.js" type="module"></script>
 </body>
-
 </html>
