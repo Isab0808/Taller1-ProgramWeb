@@ -1,8 +1,9 @@
 import { db, auth } from "./app";
-import { onAuthStateChanged } from "@firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
 import { getProducts } from "./products";
 import { createFirebaseCart, getFirebaseCart  } from "./cart";
 import { getMyLocalCart, addProductToCart, currencyFormat } from "./utils";
+import { getUser } from "./getUser";
 
 
 const productSection = document.getElementById("products");
@@ -13,6 +14,7 @@ const orderFilterReview = document.getElementById("order-review");
 let userLogged = undefined;
 let products = [];
 let cart = [];
+
 
 async function loadProducts() {
     const firebaseProducts = await getProducts(db);
@@ -38,6 +40,8 @@ function renderProduct(item) {
     '<button class="product__cart" disabled>Producto añadido</button>' :
     '<button class="product__cart">Añadir al carrito</button>';
 
+    const editProductButtonCart = '<button class="product__edit" >Editar Producto</button> <button class="product__cart" disabled>Producto añadido</button>';
+
     product.innerHTML = `
     <img src="${coverImage}" alt="" class="product__image">
     <div class="product__info">
@@ -45,13 +49,14 @@ function renderProduct(item) {
         <h2 class="product__name">${item.name}</h2>
         <p class="product__review"> Review: ${item.review}</p> 
         <h3 class="product__price">${currencyFormat(item.price)}</h3>
-        ${productButtonCart}
+        ${ userLogged.isAdmin? editProductButtonCart :productButtonCart}
     </div>
     `;
 
     productSection.appendChild(product);
 
     const productCartButton = product.querySelector(".product__cart");
+    const productEditButton = product.querySelector(".product__edit");
 
     productCartButton.addEventListener("click", async (e) => {
         e.preventDefault(); // evitar que al dar click en el boton, funcione el enlace del padre.
@@ -67,6 +72,13 @@ function renderProduct(item) {
         productCartButton.innerText = "Producto añadido";
 
     });
+    if(userLogged.isAdmin){
+        productEditButton.addEventListener("click", async (event) => {
+            event.preventDefault();
+            window.location.href = `./createProduct.html?id=${item.id}`
+        })
+    }
+
 }
 
 function filterBy(){
@@ -121,16 +133,24 @@ onAuthStateChanged(auth, async (user) => {
     if (user) {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
-      userLogged = user;
-      cart = await getFirebaseCart(db, userLogged.uid);
+      
+      getUser(user.uid).then(user=>{
+          userLogged = user;
+         loadProducts();
+      });
+      
+
+      cart = await getFirebaseCart(db, user.uid);
+      
       // ...
     } else {
         cart = getMyLocalCart();
+        await loadProducts();
       // User is signed out
       // ...
     }
 
-    loadProducts();
+    
 
   });
 
