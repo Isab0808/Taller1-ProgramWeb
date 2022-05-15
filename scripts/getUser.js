@@ -7,7 +7,6 @@ async function getUser(id){
     try {
         const docSnap = await getDoc(docRef);
         const data = docSnap.data();
-        console.log(data);
         return data;
     } catch (error) {
         console.log(error);

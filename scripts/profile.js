@@ -50,7 +50,7 @@ function renderOrder(item){
     order.innerHTML = `
     <h2 class="order__title">Order Info</h2>
     <p class="order__id">${item.id}</p>
-    <p class="order__total"> XXXXX </p>
+    <p class="order__total"> ${item.total} </p>
     <h2 class="order__details">Order Products</h2>
     <section class="order__products" id="order__products__${item.id}">
     ${item.cart.map(item => {
