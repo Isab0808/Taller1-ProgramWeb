@@ -1,9 +1,13 @@
-import { getDoc, setDoc, doc } from "firebase/firestore"; 
+import { getDoc, setDoc, doc, collection } from "firebase/firestore"; 
 
-async function createFirebaseCart(db, userId, cart) {
+async function createFirebaseCart(db, userId, cart,total) {
     try {
-        await setDoc(doc(db, "cart", userId), {
-            cart
+        const newCart = doc(collection(db,"cart"));
+        await setDoc(newCart, {
+            cart,
+            id: newCart.id,
+            userId: userId,
+            total: total,
         });
     } catch (e) {
         console.log(e);

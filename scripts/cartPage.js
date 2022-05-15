@@ -6,10 +6,12 @@ import { getMyLocalCart, currencyFormat } from "./utils";
 
 const cartSection = document.getElementById("cart");
 const totalSection = document.getElementById("total");
+const sendOrder = document.getElementById("send__order");
 let cart = [];
+let total = 0;
 
 function loadCart(cart) {
-    let total = 0;
+    
     cart.forEach(product => {
         renderProduct(product);
         total += parseInt(product.price);
@@ -23,9 +25,7 @@ async function removeProduct(productId) {
     
     cart = newCart;
 
-    if (userLogged) {
-        await createFirebaseCart(db, userLogged.uid, newCart);
-    }
+
 
     addProductToCart(newCart);
 
@@ -75,14 +75,25 @@ function renderProduct(product) {
     })
 };
 
+sendOrder.addEventListener('click', async e =>{
+    e.preventDefault();
+    if (userLogged) {
+        await createFirebaseCart(db, userLogged.uid, cart,total);
+        cart = [];
+        cartSection.innerHTML = "";
+        loadCart(cart);
+    }
+})
+
 onAuthStateChanged(auth, async (user) => {
     if (user) {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
       userLogged = user;
-      cart = await getFirebaseCart(db, userLogged.uid);
+      cart = getMyLocalCart();
+      //cart = await getFirebaseCart(db, userLogged.uid);
     } else {
-        cart = getMyLocalCart();
+        cart = getMyLocalCart();  
       // User is signed out
       // ...
     }
