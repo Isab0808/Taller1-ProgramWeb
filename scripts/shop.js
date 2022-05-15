@@ -49,7 +49,7 @@ function renderProduct(item) {
         <h2 class="product__name">${item.name}</h2>
         <p class="product__review"> Review: ${item.review}</p> 
         <h3 class="product__price">${currencyFormat(item.price)}</h3>
-        ${ userLogged.isAdmin? editProductButtonCart :productButtonCart}
+        ${ userLogged && userLogged.isAdmin ? editProductButtonCart :productButtonCart}
     </div>
     `;
 
@@ -150,7 +150,7 @@ onAuthStateChanged(auth, async (user) => {
       // ...
     }
 
-    
+    loadProducts();
 
   });
 

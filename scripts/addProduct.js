@@ -1,4 +1,4 @@
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, updateDoc, collection, doc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL} from "firebase/storage";
 
 async function addProduct(db, product) {
@@ -7,6 +7,17 @@ async function addProduct(db, product) {
         console.log("Product added! :)");
     } catch(e) {
         console.log(e);
+    }
+}
+
+async function editProduct(db, product, id) {
+    try {
+        const updateRef = doc(db, "products", id);
+
+        // Set the "capital" field of the city 'DC'
+        await updateDoc(updateRef, product);
+    } catch (error) {
+        console.log(error);
     }
 }
 
@@ -28,5 +39,6 @@ async function uploadImages(storage, images = []) {
 
 export {
     addProduct,
+    editProduct,
     uploadImages
 }
