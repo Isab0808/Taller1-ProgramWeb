@@ -1,5 +1,5 @@
 import { db, auth } from "./app";
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged } from "@firebase/auth";
 import { getProducts } from "./products";
 import { createFirebaseCart, getFirebaseCart  } from "./cart";
 import { getMyLocalCart, addProductToCart, currencyFormat } from "./utils";
