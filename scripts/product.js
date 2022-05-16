@@ -24,7 +24,8 @@ async function loadProduct() {
 
     const product = {
         ...data,
-        id: productId, // docSnap.id,
+        id: productId,
+        amount: 1, // docSnap.id,
     }
 
     renderProduct(product);
@@ -75,6 +76,21 @@ function renderProduct(product) {
         productCartButton.setAttribute("disabled", true);
         productCartButton.innerText = "Producto añadido";
     });
+
+    const addItem = document.querySelector(".add__item");
+    addItem.addEventListener("click", async (event) =>{
+        amount+=1;
+        product.amount = amount;
+        console.log(amount);
+        document.getElementById(`amount_${product.name}`).innerHTML = amount
+    })
+    const removeItem = document.querySelector(".remove__item");
+    removeItem.addEventListener("click", async (event)=>{
+        amount-=1;
+        product.amount = amount;
+        e.target.className(`amount_${product.name}`).innerHTML = amount;
+        document.getElementById(`amount_${product.name}`).innerHTML = amount
+    })
 }
 
 function createGallery(images,main) {
