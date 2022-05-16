@@ -13,7 +13,7 @@ async function getUser(id){
     }
 }
 
-async function getUserOrders( user){
+async function getUserOrders( user, isAdmin){
     const docRef = collection(db,"cart");
 
     try {
@@ -25,11 +25,14 @@ async function getUserOrders( user){
                 id: doc.id,
             }
         });
-        
-        const dataFilter = data.filter(data => data.userId === user);
+        if(isAdmin){
+            return data;
+        } else{
+            const dataFilter = data.filter(data => data.userId === user);
+            return dataFilter;
+            
+        }
 
-        console.log(dataFilter);
-        return dataFilter;
     } catch (error) {
         console.log(error);
     }
