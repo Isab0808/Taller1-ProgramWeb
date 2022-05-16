@@ -46,7 +46,7 @@ function renderProduct(product) {
     <h2 class="product__name">${product.name}</h2>
     <div class="counter">
         <button class="remove__item"><</button>
-        <p id="amount_${product.name}">${amount}</p>
+        <p id="amount_${product.name}" class="counter__text">${amount}</p>
         <button class="add__item">></button>
     </div>
     <h3 class="product__price">${currencyFormat(product.price)}</h3>

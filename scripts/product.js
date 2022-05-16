@@ -31,24 +31,36 @@ async function loadProduct() {
 }
 
 function renderProduct(product) {
-    productAssetsSection.innerHTML = `
-    <img class="product__mainImage" id="mainImage" src="${product.images[0]}">`;
+    let amount = 0;
+    let mainImage = document.createElement('img');
+    if (product.images.length > 0) {
+        createGallery(product.images,mainImage);
+    }
+    
+    
+    mainImage.src = product.images[0];
+    mainImage.className = 'product__mainImage';
+    mainImage.id = "mainImage";
+    productAssetsSection.appendChild(mainImage);
 
     const isProductAddedToCart = cart.some((productCart) => productCart.id === product.id);
 
     const productButtonCart = isProductAddedToCart ?
-    '<button class="product__cart" disabled>Producto añadido</button>' :
-    '<button class="product__cart">Añadir al carrito</button>';
+        '<button class="product__cart" disabled>Producto añadido</button>' :
+        '<button class="product__cart">Añadir al carrito</button>';
 
     productInfoSection.innerHTML = `
     <h1 class="product__name">${product.name}</h1>
-    <p class="product__description">${product.description}</p>
+    <p class="product__review">${product.category}</p>
+    <p class="product__review">${product.review}</p>
     <h3 class="product__price">${currencyFormat(product.price)}</h3>
+    <p class="product__description">${product.description}</p>
+        <div class="counter">
+        <button class="remove__item"><</button>
+        <p id="amount_${product.name}" class="counter__text">${amount}</p>
+        <button class="add__item">></button>
+        </div>
     ${productButtonCart}`;
-
-    if (product.images.length > 1) {
-        createGallery(product.images);
-    }
 
     const productCartButton = document.querySelector(".product__cart");
     productCartButton.addEventListener("click", e => {
@@ -65,15 +77,17 @@ function renderProduct(product) {
     });
 }
 
-function createGallery(images) {
-    const mainImage = document.getElementById("mainImage");
+function createGallery(images,main) {
+    
 
     const gallery = document.createElement("div");
     gallery.className = "product__gallery";
+    if(images.length > 1){
+        images.forEach(image => {
+            gallery.innerHTML += `<img src="${image}">`;
+        });
+    } 
 
-    images.forEach(image => {
-        gallery.innerHTML += `<img src="${image}">`;
-    });
 
     productAssetsSection.appendChild(gallery);
 
@@ -88,18 +102,18 @@ function createGallery(images) {
 
 onAuthStateChanged(auth, async (user) => {
     if (user) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/firebase.User
-      userLogged = user;
-      cart = await getFirebaseCart(db, userLogged.uid);
-      console.log(cart);
-      // ...
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        userLogged = user;
+        cart = await getFirebaseCart(db, userLogged.uid);
+        console.log(cart);
+        // ...
     } else {
         cart = getMyLocalCart();
-      // User is signed out
-      // ...
+        // User is signed out
+        // ...
     }
 
     loadProduct();
 
-  });
+});

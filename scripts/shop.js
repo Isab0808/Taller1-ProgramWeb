@@ -7,6 +7,7 @@ import { getUser } from "./getUser";
 
 
 const productSection = document.getElementById("products");
+const extraSection = document.getElementById("extra");
 const categoryFilter = document.getElementById("category");
 const orderFilterPrice = document.getElementById("order");
 const orderFilterReview = document.getElementById("order-review");
@@ -64,7 +65,7 @@ function renderProduct(item) {
         cart.push(item);
         addProductToCart(cart);
 
-        if (userLogged) {
+        if (userLogged ) {
             await createFirebaseCart(db, userLogged.uid, cart);
         }
 
@@ -72,12 +73,26 @@ function renderProduct(item) {
         productCartButton.innerText = "Producto añadido";
 
     });
-    if(userLogged.isAdmin){
+    if( userLogged && userLogged.isAdmin ){
         productEditButton.addEventListener("click", async (event) => {
             event.preventDefault();
             window.location.href = `./createProduct.html?id=${item.id}`
         })
     }
+
+}
+
+function addBtnOption(){
+    const btnAdd = document.createElement('button');
+    btnAdd.classList = "btn__add";
+    btnAdd.id = "btn__addProduct";
+    btnAdd.innerHTML = "+";
+
+    extraSection.appendChild(btnAdd);
+
+    btnAdd.addEventListener("click", ()=>{
+        window.location.href = "createProduct.html";
+    })
 
 }
 
@@ -136,6 +151,9 @@ onAuthStateChanged(auth, async (user) => {
       
       getUser(user.uid).then(user=>{
           userLogged = user;
+          if(userLogged.isAdmin){
+              addBtnOption();
+          }
          loadProducts();
       });
       
@@ -145,7 +163,6 @@ onAuthStateChanged(auth, async (user) => {
       // ...
     } else {
         cart = getMyLocalCart();
-        await loadProducts();
       // User is signed out
       // ...
     }
