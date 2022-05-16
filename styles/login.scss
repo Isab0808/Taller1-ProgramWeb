@@ -1,0 +1,55 @@
+@import "color";
+@import "hidden";
+
+#login{
+    width: 100%;
+    position: relative;
+    display:flex;
+    flex-direction: row;
+    height: 60vh;
+
+    &__section{
+        width:50%;
+        display: flex;
+        justify-content:center;
+        align-items:center;
+
+        &--1{
+            width:50%;
+            display: flex;
+            justify-content:center;
+            align-items:center;
+            background-image: url("../img/bannerLogin.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__title{
+        color: #fff;
+        font-size:32px;
+    }
+
+    &__form{
+        width: 80%;
+
+        
+    }
+}
+
+.forms{
+    display: flex;
+    flex-direction: column;
+}
+
+#createUserForm{
+    & > *{
+        margin-bottom: 20px;
+    }
+}
+
+#loginForm{
+    & > *{
+        margin-bottom: 20px;
+    }
+}

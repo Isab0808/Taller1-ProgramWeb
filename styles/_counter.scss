@@ -1,0 +1,24 @@
+.counter{
+    display: flex;
+    flex-direction: row;
+    border:  1px solid #ccc;
+    width: fit-content;
+
+    &__text{
+        color: #ccc;
+    }
+
+    .remove__item{
+        background-color: transparent;
+        border: none;
+        margin-right: 10px;
+        color: #ccc;
+    }
+
+    .add__item{
+        margin-left: 10px;
+        background-color: transparent;
+        border: none;
+        color: #ccc;
+    }
+}

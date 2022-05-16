@@ -1,0 +1,163 @@
+@media (max-width: 768px) {
+  .menu {
+    padding-right: 20px;
+  }
+
+  .menu__item {
+    margin: 20px;
+    font-size: 15px;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  .contact__text {
+    margin-right: 60px;
+  }
+
+  .footer__title {
+    font-size: 15px;
+  }
+
+  .footer__column {
+    margin: 25px;
+  }
+
+  .footer__column p {
+    font-size: 12px;
+  }
+
+  .footer__column li {
+    font-size: 10px;
+  }
+
+  .social__media {
+    padding-bottom: 30px;
+  }
+
+  .social__media img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo {
+    width: 90px;
+  }
+
+  .nav {
+    flex-direction: column;
+  }
+
+  .menu__item {
+    margin: 6px;
+    font-size: 15px;
+  }
+
+  .wrapper__title {
+    font-size: 30px;
+  }
+
+  .wrapper__p {
+    font-size: 14px;
+  }
+
+  .banner__image {
+    height: 500px;
+  }
+
+  .favorites__container {
+    flex-wrap: wrap;
+  }
+
+  .favorites__title {
+    font-size: 20px;
+  }
+
+  .favorites__p {
+    font-size: 13px;
+  }
+
+  .favorites__column {
+    width: 100%;
+  }
+
+  .collection__title {
+    font-size: 20px;
+  }
+
+  .collection__p {
+    font-size: 13px;
+  }
+
+  #items__carousel {
+    width: 400px;
+  }
+
+  .carousel__title {
+    font-size: 20px;
+  }
+
+  .contact {
+    flex-direction: column;
+  }
+
+  .contact__text {
+    margin-right: 60px;
+  }
+
+  .contact__title {
+    margin-bottom: 15px;
+    padding-left: 30px;
+  }
+
+  .contact__p {
+    padding-left: 30px;
+  }
+
+  #form {
+    width: 100%;
+  }
+
+  .form__item {
+    margin-bottom: 20px;
+  }
+
+  .footer {
+    margin-top: 400px;
+  }
+
+  .footer__info {
+    flex-wrap: wrap;
+  }
+
+  .footer__title {
+    font-size: 15px;
+  }
+
+  .footer__column {
+    width: 100%;
+    margin: 14px;
+  }
+
+  .footer__column p {
+    font-size: 12px;
+  }
+
+  .footer__column li {
+    font-size: 10px;
+  }
+
+  .social__media {
+    padding-bottom: 30px;
+  }
+
+  .social__media img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/*# sourceMappingURL=cart.4842caf1.css.map */

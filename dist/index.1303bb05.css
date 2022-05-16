@@ -1,0 +1,317 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+.flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.text__center {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  justify-content: space-between;
+  padding: 20px;
+}
+
+header {
+  height: 600px;
+  position: relative;
+}
+
+.logo {
+  width: 160px;
+  height: 40px;
+  object-fit: contain;
+  margin-left: 40px;
+}
+
+.search__icon {
+  width: 22px;
+  height: 22px;
+}
+
+.menu__item {
+  margin: 40px;
+  list-style: none;
+  position: relative;
+}
+
+.menu__item a {
+  color: #fff;
+}
+
+.banner {
+  padding: 70px;
+  position: relative;
+}
+
+.wrapper {
+  margin-top: 60px;
+}
+
+.wrapper__title {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 50px;
+}
+
+.wrapper__p {
+  color: #fff;
+}
+
+.banner__image {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+
+.button {
+  color: #fff;
+  background-color: #0000;
+  border: thin solid;
+  margin-top: 20px;
+  padding: 10px 30px;
+}
+
+.favorites__container {
+  justify-content: space-between;
+}
+
+.favorites__column {
+  width: 30%;
+}
+
+.favorites__description {
+  color: #282828;
+  font-size: 90px;
+}
+
+.favorites__column img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.favorites {
+  color: #282828;
+  padding: 90px;
+  position: relative;
+}
+
+.favorites__title {
+  margin-bottom: 15px;
+}
+
+.favorites__p {
+  color: #939393;
+  margin-bottom: 30px;
+}
+
+.favorites__description {
+  color: #939393;
+  margin: 20px;
+  font-size: 15px;
+}
+
+.collection {
+  width: 100%;
+  padding: 120px;
+  position: absolute;
+}
+
+.conteiner__text {
+  width: 100%;
+}
+
+.collection__title {
+  color: #fff;
+  margin: 20px;
+}
+
+.collection__p {
+  color: #fff;
+}
+
+.collection__b {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.collection__image {
+  width: 100%;
+  height: 435px;
+  z-index: -1;
+}
+
+.carousel__title {
+  padding-top: 80px;
+  padding-bottom: 20px;
+}
+
+#items__carousel {
+  height: 500px;
+  overflow: hidden;
+}
+
+#items__carousel h2 {
+  color: #282828;
+  position: relative;
+}
+
+.carousel {
+  height: 100%;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.carousel__card {
+  height: 100%;
+}
+
+.carousel__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.carousel__arrows {
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+}
+
+.carousel__arrows img {
+  width: 20px;
+  height: 30px;
+}
+
+#card-1, #card-2, #card-2 {
+  background-color: #fff;
+}
+
+.form__image {
+  width: 100%;
+  height: 435px;
+  z-index: -1;
+}
+
+.contact {
+  width: 100%;
+  justify-content: center;
+  padding-top: 30px;
+  position: absolute;
+}
+
+.contact__text {
+  margin-right: 200px;
+}
+
+.contact__p {
+  color: #fff;
+  padding-top: 170px;
+}
+
+.contact__title {
+  color: #fff;
+  padding-top: 30px;
+}
+
+#form {
+  background-color: #fff;
+  padding: 60px;
+}
+
+.form__item {
+  margin-bottom: 10px;
+}
+
+.form__b {
+  color: #787878;
+  background-color: #fff;
+  border: thin solid;
+  margin-top: 20px;
+  padding: 10px 30px;
+}
+
+.form__p {
+  color: #c5c5c5;
+  font-size: 10px;
+}
+
+.footer {
+  background-color: #000;
+}
+
+.footer__logo {
+  width: 146px;
+  height: 36px;
+}
+
+.footer__column {
+  color: #fff;
+  margin: 40px;
+  padding: 10px;
+  list-style: none;
+}
+
+.footer__column p {
+  font-size: 15px;
+}
+
+.footer__column li {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.footer__title {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.footer__info {
+  width: 100%;
+  justify-content: center;
+}
+
+.social__media {
+  width: 100%;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+.social__media div {
+  width: 100%;
+  text-align: center;
+  align-items: center;
+}
+
+.social__media img {
+  width: 25px;
+  height: 25px;
+  margin-left: 20px;
+}
+
+/*# sourceMappingURL=index.1303bb05.css.map */
