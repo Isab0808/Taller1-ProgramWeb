@@ -2,7 +2,7 @@ import { db, auth } from "./app";
 import { onAuthStateChanged } from "firebase/auth";
 import {getUser, getUserOrders} from "./getUser";
 
-const productInfoArticle = document.getElementById("profileInfo");
+const productInfoArticle = document.getElementById("profile");
 const productOrdersArticle = document.getElementById("profileOrders");
 
 function getParam(param){
@@ -48,11 +48,15 @@ function renderOrder(item){
 
     
     order.innerHTML = `
-    <h2 class="order__title">Order Info</h2>
-    <p class="order__id">${item.id}</p>
-    <p class="order__total"> ${item.total} </p>
-    <h2 class="order__details">Order Products</h2>
+    <div class="order__info">
+        <h2 class="order__title">Order Info</h2>
+        <p class="order__id"><strong>ID: </strong> ${item.id}</p>
+        <p class="order__total"><strong>Total: </strong> ${item.total} </p>
+        
+    </div>
+
     <section class="order__products" id="order__products__${item.id}">
+    <h2 class="order__details">Order Products</h2>
     ${item.cart.map(item => {
         return `<div class="order__product">
             <h3 class="order__product__name">${item.name}</h3>

@@ -6,9 +6,11 @@ import { getMyLocalCart, currencyFormat } from "./utils";
 
 const cartSection = document.getElementById("cart");
 const totalSection = document.getElementById("total");
-const sendOrder = document.getElementById("send__order");
 let cart = [];
 let total = 0;
+
+const paymentCartForm = document.getElementById("paymentForm");
+
 
 function loadCart(cart) {
     
@@ -75,13 +77,32 @@ function renderProduct(product) {
     })
 };
 
-sendOrder.addEventListener('click', async e =>{
+paymentCartForm.addEventListener('submit', async e =>{
     e.preventDefault();
+    const name = paymentCartForm.name.value;
+    const lastname = paymentCartForm.lastname.value;
+    const country = paymentCartForm.country.value;
+    const town = paymentCartForm.town.value;
+    const address = paymentCartForm.address.value;
+    const card = paymentCartForm.card.value;
+    const card_number = paymentCartForm.card_number.value;
+    const userInfo = {
+        name,
+        lastname,
+        country,
+        town,
+        address,
+        card,
+        card_number,
+    }
+
     if (userLogged) {
-        await createFirebaseCart(db, userLogged.uid, cart,total);
+        await createFirebaseCart(db, userLogged.uid, cart,total, userInfo);
         cart = [];
         cartSection.innerHTML = "";
         loadCart(cart);
+    } else {
+        alert("inicia sesión :(")
     }
 })
 

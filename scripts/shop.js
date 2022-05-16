@@ -3,6 +3,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { getProducts } from "./products";
 import { createFirebaseCart, getFirebaseCart  } from "./cart";
 import { getMyLocalCart, addProductToCart, currencyFormat } from "./utils";
+import { removeProduct} from "./addProduct";
 import { getUser } from "./getUser";
 
 
@@ -43,6 +44,8 @@ function renderProduct(item) {
 
     const editProductButtonCart = '<button class="product__edit" >Editar Producto</button> <button class="product__cart" disabled>Producto añadido</button>';
 
+    const deleteProductButtonCart = '<button class="product__delete">X</button>'
+
     product.innerHTML = `
     <img src="${coverImage}" alt="" class="product__image">
     <div class="product__info">
@@ -51,6 +54,7 @@ function renderProduct(item) {
         <p class="product__review"> Review: ${item.review}</p> 
         <h3 class="product__price">${currencyFormat(item.price)}</h3>
         ${ userLogged && userLogged.isAdmin ? editProductButtonCart :productButtonCart}
+        ${userLogged && userLogged.isAdmin ? deleteProductButtonCart : "" }
     </div>
     `;
 
@@ -58,6 +62,7 @@ function renderProduct(item) {
 
     const productCartButton = product.querySelector(".product__cart");
     const productEditButton = product.querySelector(".product__edit");
+    const productRemoveButton = product.querySelector(".product__delete");
 
     productCartButton.addEventListener("click", async (e) => {
         e.preventDefault(); // evitar que al dar click en el boton, funcione el enlace del padre.
@@ -78,6 +83,13 @@ function renderProduct(item) {
             event.preventDefault();
             window.location.href = `./createProduct.html?id=${item.id}`
         })
+
+        productRemoveButton.addEventListener("click", async (event) => {
+            event.preventDefault();
+            await removeProduct(db,item.id);
+            loadProducts();
+        })
+
     }
 
 }

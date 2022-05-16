@@ -1,4 +1,4 @@
-import { addDoc, updateDoc, collection, doc } from "firebase/firestore";
+import { addDoc, updateDoc, deleteDoc, collection, doc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL} from "firebase/storage";
 
 async function addProduct(db, product) {
@@ -21,6 +21,11 @@ async function editProduct(db, product, id) {
     }
 }
 
+async function removeProduct(db,id) {
+    
+    await deleteDoc(doc(db, "products", id));
+}
+
 async function imageUploadReference(storage, image) {
     const storageRef = ref(storage, `products/images/${image.name}`);
     return await uploadBytes(storageRef, image);
@@ -40,5 +45,6 @@ async function uploadImages(storage, images = []) {
 export {
     addProduct,
     editProduct,
+    removeProduct,
     uploadImages
 }

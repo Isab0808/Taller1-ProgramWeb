@@ -1,6 +1,6 @@
 import { getDoc, setDoc, doc, collection } from "firebase/firestore"; 
 
-async function createFirebaseCart(db, userId, cart,total) {
+async function createFirebaseCart(db, userId, cart,total, userInfo) {
     try {
         const newCart = doc(collection(db,"cart"));
         await setDoc(newCart, {
@@ -8,6 +8,7 @@ async function createFirebaseCart(db, userId, cart,total) {
             id: newCart.id,
             userId: userId,
             total: total,
+            userInfo: userInfo,
         });
     } catch (e) {
         console.log(e);

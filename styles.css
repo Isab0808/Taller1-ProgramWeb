@@ -104,6 +104,13 @@ header{
     background-color:transparent;
 }
 
+.button--2{
+    padding: 10px 30px;
+    margin-top: 20px;
+    background-color:black;
+    color: white;
+}
+
 .favorites__container {
     justify-content: space-between;
 }
