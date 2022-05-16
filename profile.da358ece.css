@@ -1,0 +1,40 @@
+.black {
+  filter: brightness(0);
+  color: #000 !important;
+}
+
+#profile {
+  width: 100%;
+  height: 40vh;
+  background-color: #ccc;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5%;
+  display: flex;
+}
+
+.product__name {
+  color: #000;
+}
+
+#profileOrders {
+  width: 100%;
+  background-color: #ececec;
+  padding: 5%;
+}
+
+.order {
+  width: 100%;
+  color: #f0f8ff;
+  background-color: #585858;
+  margin-bottom: 60px;
+  padding: 5%;
+  display: flex;
+}
+
+.order__info {
+  margin-right: 5%;
+}
+
+/*# sourceMappingURL=profile.da358ece.css.map */
