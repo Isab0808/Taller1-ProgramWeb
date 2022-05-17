@@ -547,7 +547,21 @@ function renderUser(user) {
     <h1 class="profile__name">${user.name}</h1>
     <p class="profile__email">${user.email}</p>
     <h2 class="profile__orders"> Order History </h2>
+    <button class="profile__signOut">Cerrar Sesión</button>
     `;
+    const signOutBtn = document.querySelector(".profile__signOut");
+    signOutBtn.addEventListener("click", async (event)=>{
+        event.preventDefault();
+        const auth = _auth.getAuth();
+        _auth.signOut(auth).then(()=>{
+            // Sign-out successful.
+            alert("Sign-out successful");
+            window.location.href = "shop.html";
+        }).catch((error)=>{
+            // An error happened.
+            alert("An error occurred: " + error.message);
+        });
+    });
 }
 function renderOrders(orders) {
     orders.forEach((order)=>{
@@ -561,7 +575,6 @@ function renderOrder(item1) {
     <p class="order__id"><strong>Nombre: </strong> ${item1.userInfo.name + " " + item1.userInfo.lastname}</p>
     <p class="order__total"><strong>Lugar: </strong> ${item1.userInfo.country} </p>
     <p class="order__total"><strong>Dirección: </strong> ${item1.userInfo.address} </p>
-
     </div`;
     order.innerHTML = `
     <div class="order__info">
@@ -589,7 +602,7 @@ _auth.onAuthStateChanged(_app.auth, async (user1)=>{
         _getUser.getUser(user1.uid).then((user)=>{
             userLogged = user;
         });
-    } else window.location.href = "login.html";
+    } else window.location.href = "./login.html";
 });
 
 },{"./app":"dVfCV","firebase/auth":"drt1f","./getUser":"6jzdH"}],"6jzdH":[function(require,module,exports) {

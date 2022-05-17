@@ -546,7 +546,8 @@ async function loadProduct() {
     const data = await _getProducts.getProduct(productId);
     const product = {
         ...data,
-        id: productId
+        id: productId,
+        amount: 1
     };
     renderProduct(product);
 }
@@ -580,6 +581,20 @@ function renderProduct(product) {
         if (userLogged) _cart.createFirebaseCart(_app.db, userLogged.uid, cart);
         productCartButton.setAttribute("disabled", true);
         productCartButton.innerText = "Producto añadido";
+    });
+    const addItem = document.querySelector(".add__item");
+    addItem.addEventListener("click", async (event)=>{
+        amount += 1;
+        product.amount = amount;
+        console.log(amount);
+        document.getElementById(`amount_${product.name}`).innerHTML = amount;
+    });
+    const removeItem = document.querySelector(".remove__item");
+    removeItem.addEventListener("click", async (event)=>{
+        amount -= 1;
+        product.amount = amount;
+        e.target.className(`amount_${product.name}`).innerHTML = amount;
+        document.getElementById(`amount_${product.name}`).innerHTML = amount;
     });
 }
 function createGallery(images, main) {

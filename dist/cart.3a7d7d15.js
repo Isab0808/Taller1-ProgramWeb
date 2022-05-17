@@ -536,9 +536,10 @@ let cart = [];
 let total = 0;
 const paymentCartForm = document.getElementById("paymentForm");
 function loadCart(cart1) {
+    total = 0;
     cart1.forEach((product)=>{
         renderProduct(product);
-        total += parseInt(product.price);
+        total += parseInt(product.price) * parseInt(product.amount);
     });
     totalSection.innerText = _utils.currencyFormat(total);
 }
@@ -552,7 +553,7 @@ async function removeProduct(productId) {
 }
 function renderProduct(product) {
     const productCart = document.createElement("li");
-    let amount = 1;
+    let amount = product.amount === 1 ? product.amount : 1;
     productCart.className = "product";
     productCart.innerHTML = `
     <button class="product__delete">X</button>
@@ -574,13 +575,21 @@ function renderProduct(product) {
         }
         if (e.target.tagName === "BUTTON" && e.target.className === "remove__item") {
             amount -= 1;
+            product.amount = amount;
             e.target.className(`amount_${product.name}`).innerHTML = amount;
             document.getElementById(`amount_${product.name}`).innerHTML = amount;
+            total += parseInt(product.price) * parseInt(product.amount);
+            total = 0;
+            totalSection.innerText = _utils.currencyFormat(total);
         }
         if (e.target.tagName === "BUTTON" && e.target.className === "add__item") {
             amount += 1;
+            product.amount = amount;
             console.log(amount);
             document.getElementById(`amount_${product.name}`).innerHTML = amount;
+            total = 0;
+            total += parseInt(product.price) * parseInt(product.amount);
+            totalSection.innerText = _utils.currencyFormat(total);
         }
     });
 }
