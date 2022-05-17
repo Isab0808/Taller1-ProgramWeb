@@ -556,7 +556,7 @@ function renderProduct(item) {
     const coverImage = item.images ? item.images[0] : "https://cdn1.iconfinder.com/data/icons/business-company-1/500/image-512.png";
     const isProductAddedToCart = cart.some((productCart)=>productCart.id === item.id
     );
-    const productButtonCart = isProductAddedToCart ? '<button class="product__cart" disabled>Producto añadido</button>' : '<button class="product__cart">Añadir al carrito</button>';
+    const productButtonCart = isProductAddedToCart ? '<button class="product__cart" disabled>Product added</button>' : '<button class="product__cart">Add to cart</button>';
     const editProductButtonCart = '<button class="product__edit" >Editar Producto</button> <button class="product__cart" disabled>Producto añadido</button>';
     const deleteProductButtonCart = '<button class="product__delete">X</button>';
     product.innerHTML = `

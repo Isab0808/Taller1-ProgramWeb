@@ -1,22 +1,31 @@
 .products{
     display:flex;
     flex-wrap: wrap;
-    width:100%;
     margin: 5%;
+    justify-content: space-around;
+    justify-content: center;
 }
 
 .product{
-    width: 25vw;
-    height: 60vh;
+    color: rgb(40, 40, 40);
+    width: 20vw;
+    height: 88vh;
     margin-right: 5%;
 
     &__image{
         width: 100%;
-        height: 70%;
+        height: 60%;
     }
 
-    &__info{
-
+    button{
+        width: 100%;
+        background-color: transparent;
+        border-color: #fff;
+        border: solid;
+        border-width: thin;
+        color: rgb(117, 117, 117);
+        padding: 10px 30px;
+        margin-top: 30px;
     }
 
     &__category{

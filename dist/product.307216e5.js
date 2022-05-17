@@ -561,7 +561,7 @@ function renderProduct(product) {
     productAssetsSection.appendChild(mainImage);
     const isProductAddedToCart = cart.some((productCart)=>productCart.id === product.id
     );
-    const productButtonCart = isProductAddedToCart ? '<button class="product__cart" disabled>Producto añadido</button>' : '<button class="product__cart">Añadir al carrito</button>';
+    const productButtonCart = isProductAddedToCart ? '<button class="product__cart" disabled>Product added</button>' : '<button class="product__cart">Add to cart</button>';
     productInfoSection.innerHTML = `
     <h1 class="product__name">${product.name}</h1>
     <p class="product__review">${product.category}</p>
