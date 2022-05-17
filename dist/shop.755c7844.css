@@ -13,7 +13,7 @@
 .product {
   color: #282828;
   width: 20vw;
-  height: 88vh;
+  height: fit-content;
   margin-right: 5%;
 }
 
@@ -27,7 +27,8 @@
   color: #757575;
   background-color: #0000;
   border: thin solid;
-  margin-top: 30px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   padding: 10px 30px;
 }
 
@@ -56,7 +57,12 @@
   color: #757575;
   background-color: #0000;
   border: thin solid;
+  margin-right: 15px;
   padding: 5px;
+}
+
+#categories label {
+  margin-right: 15px;
 }
 
 /*# sourceMappingURL=shop.755c7844.css.map */

@@ -65,10 +65,9 @@ function renderProduct(product) {
          if (e.target.tagName === "BUTTON" &&  e.target.className === "remove__item") {
             amount-=1;
             product.amount = amount;
-            e.target.className(`amount_${product.name}`).innerHTML = amount;
             document.getElementById(`amount_${product.name}`).innerHTML = amount
-            total += (parseInt(product.price)*parseInt(product.amount));
             total=0;
+            getTotal(cart);
             totalSection.innerText = currencyFormat(total);
         }
         if (e.target.tagName === "BUTTON" &&  e.target.className === "add__item") {
@@ -77,7 +76,7 @@ function renderProduct(product) {
             console.log(amount);
             document.getElementById(`amount_${product.name}`).innerHTML = amount;
             total=0;
-            total += (parseInt(product.price)*parseInt(product.amount));
+            getTotal(cart);
             totalSection.innerText = currencyFormat(total);
         }
 
@@ -129,3 +128,9 @@ onAuthStateChanged(auth, async (user) => {
     loadCart(cart);
 
   });
+
+  function getTotal(product =[]) {
+    product.forEach(item =>{
+        total += (parseInt(item.price)*parseInt(item.amount));
+    })
+  }

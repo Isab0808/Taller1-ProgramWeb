@@ -9,7 +9,7 @@
 .product{
     color: rgb(40, 40, 40);
     width: 20vw;
-    height: 88vh;
+    height: fit-content;
     margin-right: 5%;
 
     &__image{
@@ -25,6 +25,7 @@
         border-width: thin;
         color: rgb(117, 117, 117);
         padding: 10px 30px;
-        margin-top: 30px;
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
 }
