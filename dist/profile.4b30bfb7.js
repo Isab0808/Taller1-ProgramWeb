@@ -544,10 +544,10 @@ async function loadUser(userId) {
 }
 function renderUser(user) {
     productInfoArticle.innerHTML = `
-    <h1 class="profile__name">${user.name}</h1>
+    <h2 class="profile__name">${user.name}</h2>
     <p class="profile__email">${user.email}</p>
     <h2 class="profile__orders"> Order History </h2>
-    <button class="profile__signOut">Cerrar Sesión</button>
+    <button class="profile__signOut">Log out</button>
     `;
     const signOutBtn = document.querySelector(".profile__signOut");
     signOutBtn.addEventListener("click", async (event)=>{
@@ -580,7 +580,7 @@ function renderOrder(item1) {
     <div class="order__info">
         <h2 class="order__title">Order Info</h2>
         <p class="order__id"><strong>ID: </strong> ${item1.id}</p>
-        <p class="order__total"><strong>Total: </strong> ${item1.total} </p>
+        <p class="order__total"><strong>Total: </strong> ${"$" + item1.total} </p>
         ${userLogged && userLogged.isAdmin ? userInfo : ""}
     </div>
 
@@ -589,7 +589,7 @@ function renderOrder(item1) {
     ${item1.cart.map((item)=>{
         return `<div class="order__product">
             <h3 class="order__product__name">${item.name}</h3>
-            <p class="order__product__price">${item.price}</p>
+            <p class="order__product__price">${"$" + item.price}</p>
         </div>`;
     })}
     </section>
