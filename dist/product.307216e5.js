@@ -580,7 +580,7 @@ function renderProduct(product) {
         _utils.addProductToCart(cart);
         if (userLogged) _cart.createFirebaseCart(_app.db, userLogged.uid, cart);
         productCartButton.setAttribute("disabled", true);
-        productCartButton.innerText = "Producto añadido";
+        productCartButton.innerText = "Product added";
     });
     const addItem = document.querySelector(".add__item");
     addItem.addEventListener("click", async (event)=>{

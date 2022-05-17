@@ -580,7 +580,7 @@ function renderProduct(item) {
         _utils.addProductToCart(cart);
         if (userLogged) await _cart.createFirebaseCart(_app.db, userLogged.uid, cart);
         productCartButton.setAttribute("disabled", true);
-        productCartButton.innerText = "Producto añadido";
+        productCartButton.innerText = "Product added";
     });
     if (userLogged && userLogged.isAdmin) {
         productEditButton.addEventListener("click", async (event)=>{

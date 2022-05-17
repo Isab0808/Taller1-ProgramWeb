@@ -1,7 +1,29 @@
 .forms{
     display: flex;
-    width: 100%;
     flex-direction: column;
-    align-items: center;
-    margin: 5%;
+    margin: 10%;
+
+    h2 {
+        padding-bottom: 20px;
+    }
 }
+
+input {
+    background-color: transparent;
+    border-color: #fff;
+    border: solid;
+    border-width: thin;
+    color: rgb(117, 117, 117);
+    padding: 7px;
+    border-radius: 5px;
+    }
+
+select {
+    background-color: transparent;
+    border-color: #fff;
+    border: solid;
+    border-width: thin;
+    color: rgb(117, 117, 117);
+    padding: 7px;
+    border-radius: 5px;
+    }

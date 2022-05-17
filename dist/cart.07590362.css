@@ -4,11 +4,21 @@
 }
 
 .forms {
-  width: 100%;
   flex-direction: column;
-  align-items: center;
-  margin: 5%;
+  margin: 10%;
   display: flex;
+}
+
+.forms h2 {
+  padding-bottom: 20px;
+}
+
+input, select {
+  color: #757575;
+  background-color: #0000;
+  border: thin solid;
+  border-radius: 5px;
+  padding: 7px;
 }
 
 .cart .product {
@@ -17,6 +27,8 @@
   text-align: center;
   justify-content: space-around;
   align-items: center;
+  padding: 5%;
+  font-size: 20px;
   display: flex;
 }
 
@@ -36,8 +48,19 @@
   display: flex;
 }
 
-.cart__banner h1 {
+.cart__banner h2 {
   color: #fff;
+}
+
+.product {
+  height: 10vh;
+  width: 100%;
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5%;
+  font-size: 20px;
+  display: flex;
 }
 
 .counter {

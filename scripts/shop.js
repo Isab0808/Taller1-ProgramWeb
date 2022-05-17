@@ -75,7 +75,7 @@ function renderProduct(item) {
         }
 
         productCartButton.setAttribute("disabled", true);
-        productCartButton.innerText = "Producto añadido";
+        productCartButton.innerText = "Product added";
 
     });
     if( userLogged && userLogged.isAdmin ){
