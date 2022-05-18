@@ -615,7 +615,7 @@ paymentCartForm.addEventListener('submit', async (e)=>{
         cart = [];
         cartSection.innerHTML = "";
         loadCart(cart);
-    } else alert("inicia sesión :(");
+    } else alert("Log in :(");
 });
 _auth.onAuthStateChanged(_app.auth, async (user)=>{
     if (user) {

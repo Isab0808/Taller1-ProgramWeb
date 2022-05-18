@@ -557,7 +557,7 @@ function renderProduct(item) {
     const isProductAddedToCart = cart.some((productCart)=>productCart.id === item.id
     );
     const productButtonCart = isProductAddedToCart ? '<button class="product__cart" disabled>Product added</button>' : '<button class="product__cart">Add to cart</button>';
-    const editProductButtonCart = '<button class="product__edit" >Editar Producto</button> <button class="product__cart" disabled>Producto añadido</button>';
+    const editProductButtonCart = '<button class="product__edit" >Edit product</button>';
     const deleteProductButtonCart = '<button class="product__delete">X</button>';
     product.innerHTML = `
     <img src="${coverImage}" alt="" class="product__image">
@@ -574,7 +574,7 @@ function renderProduct(item) {
     const productCartButton = product.querySelector(".product__cart");
     const productEditButton = product.querySelector(".product__edit");
     const productRemoveButton = product.querySelector(".product__delete");
-    productCartButton.addEventListener("click", async (e)=>{
+    if (userLogged && !userLogged.isAdmin) productCartButton.addEventListener("click", async (e)=>{
         e.preventDefault(); // evitar que al dar click en el boton, funcione el enlace del padre.
         cart.push(item);
         _utils.addProductToCart(cart);

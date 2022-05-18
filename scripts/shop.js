@@ -42,7 +42,7 @@ function renderProduct(item) {
     '<button class="product__cart" disabled>Product added</button>' :
     '<button class="product__cart">Add to cart</button>';
 
-    const editProductButtonCart = '<button class="product__edit" >Editar Producto</button> <button class="product__cart" disabled>Producto añadido</button>';
+    const editProductButtonCart = '<button class="product__edit" >Edit product</button>'
 
     const deleteProductButtonCart = '<button class="product__delete">X</button>'
 
@@ -64,20 +64,23 @@ function renderProduct(item) {
     const productEditButton = product.querySelector(".product__edit");
     const productRemoveButton = product.querySelector(".product__delete");
 
-    productCartButton.addEventListener("click", async (e) => {
-        e.preventDefault(); // evitar que al dar click en el boton, funcione el enlace del padre.
+    if(userLogged && !userLogged.isAdmin){
+        productCartButton.addEventListener("click", async (e) => {
+            e.preventDefault(); // evitar que al dar click en el boton, funcione el enlace del padre.
+    
+            cart.push(item);
+            addProductToCart(cart);
+    
+            if (userLogged ) {
+                await createFirebaseCart(db, userLogged.uid, cart);
+            }
+    
+            productCartButton.setAttribute("disabled", true);
+            productCartButton.innerText = "Product added";
+    
+        });
+    }
 
-        cart.push(item);
-        addProductToCart(cart);
-
-        if (userLogged ) {
-            await createFirebaseCart(db, userLogged.uid, cart);
-        }
-
-        productCartButton.setAttribute("disabled", true);
-        productCartButton.innerText = "Product added";
-
-    });
     if( userLogged && userLogged.isAdmin ){
         productEditButton.addEventListener("click", async (event) => {
             event.preventDefault();

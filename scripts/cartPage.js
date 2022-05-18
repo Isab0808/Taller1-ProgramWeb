@@ -108,7 +108,7 @@ paymentCartForm.addEventListener('submit', async e =>{
         cartSection.innerHTML = "";
         loadCart(cart);
     } else {
-        alert("inicia sesión :(")
+        alert("Log in :(")
     }
 })
 

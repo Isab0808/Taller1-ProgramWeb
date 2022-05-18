@@ -13,6 +13,10 @@
   padding-bottom: 20px;
 }
 
+.forms label {
+  padding-bottom: 10px;
+}
+
 input, select {
   color: #757575;
   background-color: #0000;
@@ -22,12 +26,11 @@ input, select {
 }
 
 .cart .product {
-  height: 10vh;
-  width: 100%;
+  height: 16vh;
   text-align: center;
+  background-color: #f7f5f6;
   justify-content: space-around;
   align-items: center;
-  padding: 5%;
   font-size: 13px;
   display: flex;
 }
@@ -61,21 +64,24 @@ input, select {
 }
 
 .counter {
-  height: 30%;
+  align-items: center;
   display: flex;
 }
 
 .money {
   width: 100%;
-  flex-direction: row;
-  justify-content: center;
-  font-size: 26px;
+  margin: 2.5% 10% 10%;
+  font-size: 18px;
   display: flex;
 }
 
 .title {
-  margin: 30px;
+  margin: 2.5% 10%;
   display: flex;
+}
+
+#cart.cart {
+  width: 97%;
 }
 
 /*# sourceMappingURL=cart.07590362.css.map */

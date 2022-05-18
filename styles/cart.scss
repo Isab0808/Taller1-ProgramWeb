@@ -4,15 +4,13 @@
 .cart{
 
     & .product{
+        background-color:rgb(247, 245, 246);
         font-size: 13px;
-        padding: 5%;
         display: flex;
-        height: 10vh;
-        width:100%;
+        height: 16vh;
         justify-content: space-around;
         align-items: center;
         text-align: center;
-        padding: 5%;
         
         & img{
             width: 4%;
@@ -51,19 +49,24 @@
 
 .counter{
     display: flex;
-    height: 30%;
+    align-items: center;
 }
 
 .money{
     width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    font-size: 26px;
+    margin: 10%;
+    font-size: 18px;
+    margin-top: 2.5%;
 }
 
 .title {
     display: flex;
-    margin-left: 50%;
-    margin: 30px;
+    margin: 10%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+}
+
+#cart.cart{
+    width: 97%;
 }
