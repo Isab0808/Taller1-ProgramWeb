@@ -541,6 +541,7 @@ createProductForm.addEventListener("submit", async (e)=>{
     const name = createProductForm.name.value;
     const description = createProductForm.description.value;
     const price = createProductForm.price.value;
+    const review = createProductForm.review.value;
     const category = createProductForm.category.value;
     const images = createProductForm.images.files;
     let gallery = [];
@@ -555,6 +556,7 @@ createProductForm.addEventListener("submit", async (e)=>{
         name,
         description,
         price,
+        review,
         category,
         images: gallery
     };
@@ -584,6 +586,7 @@ function seeFeatures(product) {
     createProductForm.name.value = product.name;
     createProductForm.description.value = product.description;
     createProductForm.price.value = product.price;
+    createProductForm.review.value = product.review;
     createProductForm.category.value = product.category;
 }
 _auth.onAuthStateChanged(_app.auth, async (user1)=>{
