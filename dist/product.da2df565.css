@@ -23,25 +23,14 @@
   margin-left: 4%;
 }
 
-.counter {
-  width: fit-content;
-  border: 1px solid #ccc;
-  flex-direction: row;
-  display: flex;
-}
-
-.counter__text {
-  color: #ccc;
-}
-
-.counter .remove__item {
+.remove__item {
   color: #ccc;
   background-color: #0000;
   border: none;
   margin-right: 10px;
 }
 
-.counter .add__item {
+.add__item {
   color: #ccc;
   background-color: #0000;
   border: none;
@@ -100,6 +89,21 @@
 
 .product__name {
   padding-top: 5%;
+}
+
+.product__description {
+  width: 80%;
+  color: #939393;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.product__cart {
+  color: #757575;
+  background-color: #0000;
+  border: thin solid;
+  border-radius: 5px;
+  padding: 7px 20px;
 }
 
 /*# sourceMappingURL=product.da2df565.css.map */

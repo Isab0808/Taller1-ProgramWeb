@@ -1,12 +1,4 @@
-.counter{
-    display: flex;
-    flex-direction: row;
-    border:  1px solid #ccc;
-    width: fit-content;
 
-    &__text{
-        color: #ccc;
-    }
 
     .remove__item{
         background-color: transparent;
@@ -21,4 +13,3 @@
         border: none;
         color: #ccc;
     }
-}

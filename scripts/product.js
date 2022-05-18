@@ -56,11 +56,6 @@ function renderProduct(product) {
     <p class="product__review">${product.review}</p>
     <h3 class="product__price">${currencyFormat(product.price)}</h3>
     <p class="product__description">${product.description}</p>
-        <div class="counter">
-        <button class="remove__item"><</button>
-        <p id="amount_${product.name}" class="counter__text">${amount}</p>
-        <button class="add__item">></button>
-        </div>
     ${productButtonCart}`;
 
     const productCartButton = document.querySelector(".product__cart");
@@ -94,8 +89,6 @@ function renderProduct(product) {
 }
 
 function createGallery(images,main) {
-    
-
     const gallery = document.createElement("div");
     gallery.className = "product__gallery";
     if(images.length > 1){
@@ -103,7 +96,6 @@ function createGallery(images,main) {
             gallery.innerHTML += `<img src="${image}">`;
         });
     } 
-
 
     productAssetsSection.appendChild(gallery);
 

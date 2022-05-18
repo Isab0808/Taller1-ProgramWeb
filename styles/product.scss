@@ -4,7 +4,6 @@
 @import "arrow";
 @import "counter";
 
-
 .product{
     width: 100%;
     height: 80vh;
@@ -56,7 +55,20 @@
         padding-top: 5%;
     }
 
-    &__review{
+    &__description{
+        padding-top: 5%;
+        padding-bottom: 5%;
+        width: 80%;
+        color: rgb(147, 147, 147);
+    }
 
+    &__cart{
+        background-color: transparent;
+        border-color: #fff;
+        border: solid;
+        border-width: thin;
+        color: rgb(117, 117, 117);
+        padding: 7px 20px;
+        border-radius: 5px;
     }
 }

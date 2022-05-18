@@ -568,11 +568,6 @@ function renderProduct(product) {
     <p class="product__review">${product.review}</p>
     <h3 class="product__price">${_utils.currencyFormat(product.price)}</h3>
     <p class="product__description">${product.description}</p>
-        <div class="counter">
-        <button class="remove__item"><</button>
-        <p id="amount_${product.name}" class="counter__text">${amount}</p>
-        <button class="add__item">></button>
-        </div>
     ${productButtonCart}`;
     const productCartButton = document.querySelector(".product__cart");
     productCartButton.addEventListener("click", (e)=>{
