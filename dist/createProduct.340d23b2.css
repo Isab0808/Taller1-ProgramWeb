@@ -3,4 +3,53 @@
   color: #000 !important;
 }
 
+#createProductForm {
+  flex-direction: column;
+  margin: 10%;
+  display: flex;
+}
+
+#createProductForm input, #createProductForm textarea, #createProductForm select {
+  color: #757575;
+  background-color: #0000;
+  border: thin solid;
+  border-radius: 5px;
+  padding: 7px;
+}
+
+#createProductForm label {
+  margin: 10px 0;
+}
+
+#createProductForm {
+  flex-direction: column;
+  margin: 5%;
+  display: flex;
+}
+
+#createProductForm #button {
+  color: #fff;
+  width: 20%;
+  background-color: #000;
+  border-radius: 3px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+  padding: 10px;
+  display: flex;
+}
+
+h2 {
+  height: 30vh;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  background-image: url("img2.f0517fd5.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
 /*# sourceMappingURL=createProduct.340d23b2.css.map */

@@ -49,19 +49,24 @@
         </div>
     </nav>
 
-    
+    <h2>Create product</h2>
 
     <form id="createProductForm">
-        <input type="text" name="name" placeholder="Nombre del producto">
+        <label for=""><strong>Product name</strong></label>
+        <input type="text" name="name" placeholder="Product name">
+        <label for=""><strong>Description</strong></label>
         <textarea name="description"></textarea>
+        <label for=""><strong>Price</strong></label>
         <input type="number" name="price">
+        <label for=""><strong>Category</strong></label>
         <select name="category">
             <option value="decoration">Decoration</option>
             <option value="ceiling">Ceiling</option>
             <option value="led">LED</option>
         </select>
+        <label for=""><strong>Upload the files</strong></label>
         <input type="file" name="images" multiple>
-        <input type="submit" value="Crear producto">
+        <input type="submit" value="Create product" id="button">
     </form>
     <script src="./scripts/createProduct.js" type="module"></script>
 </body>
