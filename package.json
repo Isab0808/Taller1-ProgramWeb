@@ -23,7 +23,8 @@
   "dependencies": {
     "chart.js": "^3.8.0",
     "firebase": "^9.8.0",
-    "parcel": "^2.5.0"
+    "parcel": "^2.5.0",
+    "pts": "^0.10.9"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.5.0",
