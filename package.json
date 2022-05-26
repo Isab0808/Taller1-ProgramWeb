@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Isab0808/Taller1-ProgramWeb#readme",
   "dependencies": {
+    "chart.js": "^3.8.0",
     "firebase": "^9.8.0",
     "parcel": "^2.5.0"
   },
