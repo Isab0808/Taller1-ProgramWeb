@@ -533,6 +533,7 @@ var _app = require("./app");
 var _auth = require("firebase/auth");
 var _products = require("./products");
 var _getUser = require("./getUser");
+const chartContainer = document.querySelector('#chartContainer');
 async function getChartData(userId) {
     const data = await _getUser.getUser(userId);
     const dataOrders = await _getUser.getUserOrders(userId, data.isAdmin);
@@ -549,7 +550,10 @@ async function getChartData(userId) {
         });
     });
     console.log(dataOrders);
-    renderChart(products, chartData);
+    if (data.isAdmin) {
+        chartContainer.style.display = "block";
+        renderChart(products, chartData);
+    }
 }
 const renderChart = async (products, productsData)=>{
     const labels = products.map((product)=>product.name

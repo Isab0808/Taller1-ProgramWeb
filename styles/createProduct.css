@@ -1,0 +1,98 @@
+.black {
+  color: #000000 !important;
+  -webkit-filter: brightness(0);
+          filter: brightness(0);
+}
+
+#createProductForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 10%;
+}
+
+#createProductForm input {
+  background-color: transparent;
+  border-color: #fff;
+  border: solid;
+  border-width: thin;
+  color: #757575;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+#createProductForm textarea {
+  background-color: transparent;
+  border-color: #fff;
+  border: solid;
+  border-width: thin;
+  color: #757575;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+#createProductForm select {
+  background-color: transparent;
+  border-color: #fff;
+  border: solid;
+  border-width: thin;
+  color: #757575;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+#createProductForm label {
+  margin: 10px 0px;
+}
+
+#createProductForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 5%;
+}
+
+#createProductForm #button {
+  background-color: black;
+  color: #fff;
+  padding: 10px;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 5%;
+}
+
+h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 30vh;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url("../img/img2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: #fff;
+}
+/*# sourceMappingURL=createProduct.css.map */

@@ -1,0 +1,134 @@
+.black {
+  color: #000000 !important;
+  -webkit-filter: brightness(0);
+          filter: brightness(0);
+}
+
+.return {
+  background-color: #F7F5F6;
+  width: 100%;
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.anchor {
+  width: 100%;
+  height: 100%;
+}
+
+.arrow {
+  width: 2%;
+  height: 50%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 4%;
+}
+
+.remove__item {
+  background-color: transparent;
+  border: none;
+  margin-right: 10px;
+  color: #ccc;
+}
+
+.add__item {
+  margin-left: 10px;
+  background-color: transparent;
+  border: none;
+  color: #ccc;
+}
+
+.product {
+  width: 100%;
+  height: 80vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.product__assets {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.product__info {
+  width: 50%;
+}
+
+.product__info > * {
+  margin-left: 20px;
+}
+
+.product__mainImage {
+  height: 100%;
+  margin-left: 20px;
+}
+
+.product__gallery {
+  width: 20%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: 20px;
+}
+
+.product__gallery > * {
+  height: 15%;
+  width: 100%;
+  background-color: #ccc;
+}
+
+.product__images {
+  width: 20%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: 20px;
+}
+
+.product__name {
+  padding-top: 5%;
+}
+
+.product__description {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  width: 80%;
+  color: #939393;
+}
+
+.product__cart {
+  background-color: transparent;
+  border-color: #fff;
+  border: solid;
+  border-width: thin;
+  color: #757575;
+  padding: 7px 20px;
+  border-radius: 5px;
+}
+/*# sourceMappingURL=product.css.map */

@@ -1,0 +1,128 @@
+.black {
+  color: #000000 !important;
+  -webkit-filter: brightness(0);
+          filter: brightness(0);
+}
+
+.forms {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 10%;
+}
+
+.forms h2 {
+  padding-bottom: 20px;
+}
+
+.forms label {
+  padding-bottom: 10px;
+}
+
+input {
+  background-color: transparent;
+  border-color: #fff;
+  border: solid;
+  border-width: thin;
+  color: #757575;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+select {
+  background-color: transparent;
+  border-color: #fff;
+  border: solid;
+  border-width: thin;
+  color: #757575;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+.cart .product {
+  background-color: #f7f5f6;
+  font-size: 13px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 16vh;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.cart .product img {
+  width: 4%;
+}
+
+.cart__banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 30vh;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url("../img/bannerCart.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.cart__banner h2 {
+  color: #fff;
+}
+
+.product button {
+  background-color: transparent;
+  border-color: #fff;
+  border: solid;
+  border-width: thin;
+  color: #757575;
+  padding: 5px;
+  margin-right: 15px;
+}
+
+.counter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.money {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10%;
+  font-size: 18px;
+  margin-top: 2.5%;
+}
+
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10%;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+}
+
+#cart.cart {
+  width: 97%;
+}
+/*# sourceMappingURL=cart.css.map */

@@ -4,6 +4,8 @@ import { onAuthStateChanged, getAuth, signOut } from "firebase/auth";
 import { getProducts } from "./products";
 import { getUser, getUserOrders } from "./getUser";
 
+const chartContainer = document.querySelector('#chartContainer');
+
 async function getChartData(userId) {
 
     const data = await getUser(userId);
@@ -25,8 +27,11 @@ async function getChartData(userId) {
     })
 
     console.log(dataOrders);
+    if(data.isAdmin){
+        chartContainer.style.display = "block";
+        renderChart(products, chartData);
+    }
     
-    renderChart(products, chartData);
 }
 
 const renderChart = async (products, productsData) => {
