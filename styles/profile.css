@@ -7,7 +7,6 @@
 #profile {
   width: 100%;
   height: 55vh;
-  background-color: black;
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -67,5 +66,16 @@
 #chartContainer {
   display: none;
   padding: 5%;
+}
+
+#pts {
+  position: relative;
+}
+
+#pts_canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 /*# sourceMappingURL=profile.css.map */

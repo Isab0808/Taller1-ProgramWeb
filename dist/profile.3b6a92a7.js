@@ -602,7 +602,7 @@ _auth.onAuthStateChanged(_app.auth, async (user1)=>{
     } else window.location.href = "./login.html";
 });
 
-},{"chart.js/auto":"6r6LS","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./app":"dVfCV","./products":"ixQTn","./getUser":"6jzdH","firebase/auth":"drt1f"}],"6r6LS":[function(require,module,exports) {
+},{"chart.js/auto":"6r6LS","./app":"dVfCV","firebase/auth":"drt1f","./products":"ixQTn","./getUser":"6jzdH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6r6LS":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _chartEsmJs = require("../dist/chart.esm.js");
