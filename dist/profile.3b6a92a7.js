@@ -529,57 +529,76 @@ function hmrAcceptRun(bundle, id) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _auto = require("chart.js/auto");
 var _autoDefault = parcelHelpers.interopDefault(_auto);
-const labels = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June', 
-];
-const data = {
-    labels: labels,
-    datasets: [
-        {
-            backgroundColor: 'rgb(31, 86, 151)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [
-                0,
-                10,
-                5,
-                2,
-                20,
-                30,
-                45
-            ]
-        }
-    ]
-};
-const config = {
-    type: 'bar',
-    data: data,
-    options: {
-        indexAxis: "y",
-        scales: {
-            y: {
-                beginAtZero: true
+var _app = require("./app");
+var _auth = require("firebase/auth");
+var _products = require("./products");
+var _getUser = require("./getUser");
+async function getChartData(userId) {
+    const data = await _getUser.getUser(userId);
+    const dataOrders = await _getUser.getUserOrders(userId, data.isAdmin);
+    const products = await _products.getProducts(_app.db);
+    const chartData = [];
+    products.forEach(()=>{
+        chartData.push(0);
+    });
+    dataOrders.forEach((order)=>{
+        order.cart.forEach((product)=>{
+            const index = products.findIndex((p)=>p.name === product.name
+            );
+            chartData[index] += 1;
+        });
+    });
+    console.log(dataOrders);
+    renderChart(products, chartData);
+}
+const renderChart = async (products, productsData)=>{
+    const labels = products.map((product)=>product.name
+    );
+    const data = {
+        labels: labels,
+        datasets: [
+            {
+                label: "Sold products",
+                backgroundColor: 'rgb(31, 86, 151)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: productsData
             }
-        },
-        legend: {
-            display: false
-        },
-        tooltips: {
-            callbacks: {
-                label: function(tooltipItem) {
-                    return tooltipItem.yLabel;
+        ]
+    };
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {
+            indexAxis: "y",
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            legend: {
+                display: false
+            },
+            tooltips: {
+                callbacks: {
+                    label: function(tooltipItem) {
+                        return tooltipItem.yLabel;
+                    }
                 }
             }
         }
-    }
+    };
+    const myChart = new _autoDefault.default(document.getElementById('myChart'), config);
 };
-const myChart = new _autoDefault.default(document.getElementById('myChart'), config);
+_auth.onAuthStateChanged(_app.auth, async (user1)=>{
+    if (user1) {
+        getChartData(user1.uid);
+        _getUser.getUser(user1.uid).then((user)=>{
+            userLogged = user;
+        });
+    } else window.location.href = "./login.html";
+});
 
-},{"chart.js/auto":"6r6LS","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6r6LS":[function(require,module,exports) {
+},{"chart.js/auto":"6r6LS","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./app":"dVfCV","./products":"ixQTn","./getUser":"6jzdH","firebase/auth":"drt1f"}],"6r6LS":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _chartEsmJs = require("../dist/chart.esm.js");
@@ -13460,6 +13479,28 @@ function styleChanged(style, prevStyle) {
     return prevStyle && JSON.stringify(style) !== JSON.stringify(prevStyle);
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["7tT22","1CmLI"], "1CmLI", "parcelRequire0c07")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ixQTn":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getProducts", ()=>getProducts
+);
+var _firestore = require("firebase/firestore");
+async function getProducts(db) {
+    const collectionRef = _firestore.collection(db, "products");
+    try {
+        const { docs  } = await _firestore.getDocs(collectionRef);
+        const products = docs.map((doc)=>{
+            return {
+                ...doc.data(),
+                id: doc.id
+            };
+        });
+        return products;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+},{"firebase/firestore":"cJafS","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["7tT22","1CmLI"], "1CmLI", "parcelRequire0c07")
 
 //# sourceMappingURL=profile.3b6a92a7.js.map
